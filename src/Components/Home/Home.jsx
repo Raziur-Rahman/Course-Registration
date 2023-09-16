@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import Cart from "../Cart/Cart"
 import { useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Home() {
@@ -25,7 +27,7 @@ function Home() {
         let totalRemaining = 20 - course.credit_hours;
 
         if (isSelected) {
-            return alert("Course Already Taken..");
+            return toast("Course Already Taken..");
         } else {
             const temp = [...selectedCourse, course];
             let totalPrice = course.price;
@@ -35,7 +37,7 @@ function Home() {
                 totalRemaining = 20 - totalCredit;
             })
             if (totalCredit > 20) {
-                return alert("Over credit token");
+                return toast("Credit limit Exceded!!! Please take within 20 credit!");
             } else {
                 setSelectedCourse(temp);
                 setPrice(totalPrice);
@@ -43,7 +45,7 @@ function Home() {
                 if (totalRemaining >= 0) {
                     setRemaining(totalRemaining);
                 } else {
-                    return alert("can't be less then 0");
+                    return toast("Credit limit Exceded");
                 }
             }
 
@@ -85,6 +87,7 @@ function Home() {
                     <Cart course={selectedCourse} price={price} creditHours={creditHours} remaining={remaining}></Cart>
 
                 </div>
+                <ToastContainer />
             </div>
 
         </>
