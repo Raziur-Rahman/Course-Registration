@@ -6,13 +6,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function Home() {
+    // State's are managed here
     const [Courses, setCourses] = useState([]);
     const [selectedCourse, setSelectedCourse] = useState([]);
     const [price, setPrice] = useState(0);
     const [creditHours, setCreditHours] = useState(0);
-
     const [remaining, setRemaining] = useState(20);
 
+    // data fecthing here
     useEffect(() => {
         fetch("./fake_data.json")
             .then((res) => res.json())
@@ -26,6 +27,7 @@ function Home() {
         let totalCredit = course.credit_hours;
         let totalRemaining = 20 - course.credit_hours;
 
+        //Controlling section  with conditions
         if (isSelected) {
             return toast("Course Already Taken..");
         } else {
@@ -36,12 +38,14 @@ function Home() {
                 totalCredit += item.credit_hours;
                 totalRemaining = 20 - totalCredit;
             })
+            // Meximum credit limit checking
             if (totalCredit > 20) {
                 return toast("Credit limit Exceded!!! Please take within 20 credit!");
             } else {
                 setSelectedCourse(temp);
                 setPrice(totalPrice);
                 setCreditHours(totalCredit);
+                // Remaining credit chaking. this is optional for my code
                 if (totalRemaining >= 0) {
                     setRemaining(totalRemaining);
                 } else {
@@ -57,6 +61,7 @@ function Home() {
         <>
             <div className="flex flex-col-reverse lg:flex-row mb-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/4">
+                    {/* Card section is implemented here */}
                     {Courses.map((course) => (
                         <div className="card p-4 rounded-lg bg-white">
                             <figure><img className="w-72 h-[150px]" src={course.thumbnail} alt="Image..." /> </figure>
@@ -83,10 +88,12 @@ function Home() {
                     }
 
                 </div>
+                {/* Cart section calling and data passing */}
                 <div className=" lg:w-1/4 my-5 md:w-1/2 md:mx-auto lg:ml-5 lg:my-0  ">
                     <Cart course={selectedCourse} price={price} creditHours={creditHours} remaining={remaining}></Cart>
 
                 </div>
+                {/* ToastContainer call */}
                 <ToastContainer />
             </div>
 

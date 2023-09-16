@@ -5,7 +5,7 @@
 
 
 =>How i am manage state in this project is discussed below:
-    I managed states in my project by using a ReactJs Special feature that is reactJs hook. In my i used "useState" hooks to manage my sevaral states. 'useState' hook is fundamental feature in react js. 'useState' hook allows functional components to manage state. It provides a way to declare state variables within functional components and is used to trigger re-rendering of the component when the state changes. Special feature of useState hooks is it can call multiple time in same function. that allow us to manage multiple state. So i used 'useState' hooks for smartly managed my components State's.
+    I managed states in my project by using a ReactJs Special feature that is reactJs hook. In my project i used "useState" hooks to manage my sevaral states. 'useState' hook is fundamental feature in react js. 'useState' hook allows functional components to manage state. It provides a way to declare state variables within functional components and is used to trigger re-rendering of the component when the state changes. Special feature of useState hooks is it can call multiple time in same function. that allow us to manage multiple state. So i used 'useState' hooks for smartly managed my components State's.
       
 
 

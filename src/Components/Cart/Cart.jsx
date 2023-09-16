@@ -10,6 +10,7 @@ function Cart({course, price, creditHours, remaining}) {
                     <p className="text-blue-600 text-xl font-semibold">Credit Hour Remaining {remaining} hr</p>
                     <hr class="mt-2  h-[2px] bg-gray-400 opacity-40 dark:opacity-80" />
                 </div>
+                {/* Code for selected courses list */}
                 <div>
                     <h1 className="text-3xl text-[#1C1B1B] font-semibold my-3">Course Name</h1>
                     <ol className="list-decimal  list-inside text-base font-normal">
