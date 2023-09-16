@@ -82,7 +82,7 @@ function Home() {
 
                 </div>
                 <div className=" lg:w-1/4 my-5 md:w-1/2 md:mx-auto lg:ml-5 lg:my-0  ">
-                    <Cart></Cart>
+                    <Cart course={selectedCourse} price={price} creditHours={creditHours} remaining={remaining}></Cart>
 
                 </div>
             </div>
