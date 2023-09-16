@@ -79,7 +79,7 @@ function Home() {
                                     </p>
                                 </div>
                                 <div className="card-actions">
-                                    <button onClick={() => handleSelect(course)} className="rounded-lg py-2 text-white font-semibold bg-blue-700 w-full">Select</button>
+                                    <button onClick={() => handleSelect(course)} className="rounded-lg py-2 text-white font-semibold bg-blue-700 w-full hover:bg-amber-500">Select</button>
                                 </div>
                             </div>
                         </div>
