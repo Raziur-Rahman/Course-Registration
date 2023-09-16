@@ -27,7 +27,6 @@ function Cart({course, price, creditHours, remaining}) {
                 </div>
                 <div>
                     <p className="mt-2 font-medium">Total Price : {price} USD</p>
-                    <hr class="mt-2  h-[2px] bg-gray-400 opacity-40 dark:opacity-80" />
                 </div>
             </div>
 

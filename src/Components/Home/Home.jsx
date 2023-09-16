@@ -55,7 +55,7 @@ function Home() {
 
     return (
         <>
-            <div className="flex flex-col-reverse lg:flex-row">
+            <div className="flex flex-col-reverse lg:flex-row mb-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:w-3/4">
                     {Courses.map((course) => (
                         <div className="card p-4 rounded-lg bg-white">
